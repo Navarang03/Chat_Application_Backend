@@ -78,6 +78,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+//app.UseStaticFiles();
+
 app.UseCors("AllowAngularApp");
 //app.UseCors("CorsPolicy");
 

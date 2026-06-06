@@ -72,6 +72,31 @@ namespace EmployeeManagementAPI.Controllers
             });
         }
 
+        //[HttpPost("upload-profile-picture")]
+        //public async Task<IActionResult> UploadProfilePicture([FromForm] IFormFile file, [FromQuery] string username)
+        //{
+        //    if (file == null || file.Length == 0)
+        //        return BadRequest("No file uploaded.");
+
+        //    var user = await _context.Signups.FirstOrDefaultAsync(u => u.Email == username || u.Phone_Number == username);
+        //    if (user == null) return NotFound("User not found.");
+
+        //    var fileName = $"{Guid.NewGuid()}_{Path.GetFileName(file.FileName)}";
+        //    var savePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/profile-images", fileName);
+
+        //    using (var stream = new FileStream(savePath, FileMode.Create))
+        //    {
+        //        await file.CopyToAsync(stream);
+        //    }
+
+        //    user.ProfileImageUrl = $"/profile-images/{fileName}";
+        //    _context.Signups.Update(user);
+        //    await _context.SaveChangesAsync();
+
+        //    return Ok(new { imageUrl = user.ProfileImageUrl });
+        //}
+
+
 
 
     }
