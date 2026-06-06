@@ -19,4 +19,4 @@ COPY --from=build /app/out .
 EXPOSE 5000
 
 # Start the app
-ENTRYPOINT ["dotnet", "ChatApplicationBackend.dll"]
+ENTRYPOINT ["dotnet", "EmployeeManagementAPI.dll"]

@@ -20,7 +20,9 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins("http://localhost:4200", 
+                           "https://your-frontend-domain.vercel.app")
+
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials(); // ? needed to support cookies/auth headers
