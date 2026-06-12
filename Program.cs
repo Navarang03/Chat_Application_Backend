@@ -20,8 +20,8 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", policy =>
     {
-        policy.WithOrigins("http://localhost:4200", 
-                           "https://your-frontend-domain.vercel.app")
+        policy.WithOrigins("http://localhost:4200",
+                           "https://chat-application-frontend-build2.vercel.app")
 
               .AllowAnyHeader()
               .AllowAnyMethod()
@@ -36,7 +36,7 @@ builder.Services.AddSwaggerGen();
 
 // DB Context
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // JWT Setup
 var jwtSecretKey = builder.Configuration["JwtSettings:SecretKey"];
