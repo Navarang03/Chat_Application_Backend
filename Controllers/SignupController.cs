@@ -36,10 +36,20 @@ namespace EmployeeManagementAPI.Controllers
             // Hash the password before saving
             signup.Password = BCrypt.Net.BCrypt.HashPassword(signup.Password);
 
+            // PostgreSQL requires UTC DateTime
+            signup.Dob = DateTime.SpecifyKind(
+                signup.Dob,
+                DateTimeKind.Utc
+            );
+
             _context.Signups.Add(signup);
             await _context.SaveChangesAsync();
 
-            return Ok(new { message = "Signup successful", data = signup });
+            return Ok(new
+            {
+                message = "Signup successful",
+                data = signup
+            });
         }
 
         // GET: api/Signup/names
