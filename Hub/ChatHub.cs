@@ -26,7 +26,7 @@
 
 //        public async Task SendMessage(string fromUser, string toUser, string message)
 //        {
-//            var timestamp = DateTime.Now;
+//            
 
 //            // Save to DB
 //            var chatMessage = new ChatMessage
@@ -147,7 +147,7 @@ namespace EmployeeManagementAPI.Hubs
 
         public async Task SendMessage(string fromUser, string toUser, string message)
         {
-            var timestamp = DateTime.Now;
+            var timestamp = DateTime.UtcNow;
 
             // Save to DB
             var chatMessage = new ChatMessage
